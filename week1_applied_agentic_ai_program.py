@@ -108,7 +108,7 @@ def restart_service(server_id: str) -> str:
         "status": "success", 
         "message": "Server restarted successfully"
     }
-    retuen json.dumps(result)
+    return json.dumps(result)
 
 # --- TASK 2: Implement the Escalation Tool ---
 def escalate_to_engineer(summary: str) -> str:
