@@ -118,7 +118,7 @@ def escalate_to_engineer(summary: str) -> str:
     2. Return a JSON string confirming the ticket was created.
     """
     # [WRITE YOUR CODE HERE]
-    print("-> TOOL: Escalating to human. Here is the summary: {summary}")
+    print(f"-> TOOL: Escalating to human. Here is the summary: {summary}")
     result = {
         "status" : "successfully escalated",
         "message": "Ticket created successfully"
