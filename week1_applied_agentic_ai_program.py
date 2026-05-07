@@ -120,7 +120,7 @@ def escalate_to_engineer(summary: str) -> str:
     # [WRITE YOUR CODE HERE]
     print("-> TOOL: Escalating to human. Here is the summary: {summary}")
     result = {
-        "status" = "successfully escalated,
+        "status" : "successfully escalated",
         "message": "Ticket created successfully"
     }
     return json.dumps(result)
