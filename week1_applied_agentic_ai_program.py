@@ -101,9 +101,14 @@ def restart_service(server_id: str) -> str:
        Example return: '{"status": "success", "message": "Server restarted successfully"}'
     """
     # [WRITE YOUR CODE HERE]
-    print("-> TOOL: Restarting service...")
-    return '{"status": "success", "message": "Server restarted successfully"}'
-    pass
+    print(f"-> TOOL: Restarting service {server_id}...")
+    
+    result = {
+        "server_id" : server_id,
+        "status": "success", 
+        "message": "Server restarted successfully"
+    }
+    retuen json.dumps(result)
 
 # --- TASK 2: Implement the Escalation Tool ---
 def escalate_to_engineer(summary: str) -> str:
@@ -113,9 +118,13 @@ def escalate_to_engineer(summary: str) -> str:
     2. Return a JSON string confirming the ticket was created.
     """
     # [WRITE YOUR CODE HERE]
-    print("-> TOOL: Escalating to human...")
-    return '{"status": "success", "message": "Ticket created successfully"}'
-    pass
+    print("-> TOOL: Escalating to human. Here is the summary: {summary}")
+    result = {
+        "status" = "successfully escalated,
+        "message": "Ticket created successfully"
+    }
+    return json.dumps(result)
+    
 
 # Map functions for the agent execution loop
 AVAILABLE_FUNCTIONS = {
@@ -183,7 +192,7 @@ tools_schema = [
                 "type": "object",
                 "properties": {
                      # ### TODO: Define the 'summary' parameter (type string)
-                     "summary": {"type": "string", "description": "Escalates the issue to a human engineer when automated fixes fail or the error is unknown."}
+                     "summary": {"type": "string", "description": "Here is the summary of the escalated issue to a human engineer."}
                 },
                 "required": ["summary"]
             }
